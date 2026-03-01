@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    environment {
+        DATAPROC_CLUSTER = 'hadoop-cluster'
+        DATAPROC_REGION = 'us-central1'
+        GCS_BUCKET = 'code-quality-assurance-project-hadoop-bucket'
+    }
     options {
         timeout(time: 20, unit: 'MINUTES') 
     }
