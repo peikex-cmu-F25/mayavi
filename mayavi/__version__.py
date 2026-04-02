@@ -6,5 +6,3 @@
 
 from mayavi.version import version as __version__
 
-# for testing failed
-AWS_ACCESS_KEY_ID = "AKIAEXAMPLE123456789"
