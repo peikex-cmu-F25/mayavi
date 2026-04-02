@@ -39,32 +39,33 @@ pipeline {
         stage('3. Quality Gate & Hadoop') {
             steps {
                 script {
-                   // Wait for SonarQube analysis to complete and check quality gate status
-                    timeout(time: 20, unit: 'MINUTES') {
-                        def qg = waitForQualityGate()
-                        if (qg.status == 'OK') {
-                            echo "No blocker issues. Submitting Hadoop job..."
+                    def qg
+                    timeout(time: 5, unit: 'MINUTES') {
+                        qg = waitForQualityGate()
+                    }
+                    if (qg.status == 'OK') {
+                        echo "No blocker issues. Submitting Hadoop job..."
+                        timeout(time: 120, unit: 'MINUTES') {
                             sh """
-                                OUTPUT_PATH=gs://${GCS_BUCKET}/output/\$(date +%s)
+                                OUTPUT_PATH=gs://${GCS_BUCKET}/output/\$(date +%s)/
                                 gcloud dataproc jobs submit hadoop \
                                   --cluster=${DATAPROC_CLUSTER} \
                                   --region=${DATAPROC_REGION} \
-                                  --project=${GCP_PROJECT} \
                                   --jar=file:///usr/lib/hadoop/hadoop-streaming.jar \
                                   --files=gs://${GCS_BUCKET}/line_count.py \
                                   --properties=mapreduce.input.fileinputformat.input.dir.recursive=true \
                                   -- \
                                   -input gs://${GCS_BUCKET}/input/ \
                                   -output \${OUTPUT_PATH} \
-                                  -mapper "python3 line_count.py mapper" \
-                                  -reducer "python3 line_count.py reducer"
+                                  -mapper 'python3 line_count.py mapper' \
+                                  -reducer 'python3 line_count.py reducer'
                                 echo "Job Results:"
-                                gsutil cat \${OUTPUT_PATH}/part-00000
+                                gsutil cat \${OUTPUT_PATH}part-00000
                             """
-                        } else {
-                            echo "Blocker issues found. Hadoop job will NOT run."
-                            echo "SonarQube status: ${qg.status}"
                         }
+                    } else {
+                        echo "Blocker issues found. Hadoop job will NOT run."
+                        echo "SonarQube status: ${qg.status}"
                     }
                 }
             }
