@@ -9,7 +9,7 @@ pipeline {
     }
 
     options {
-        timeout(time: 20, unit: 'MINUTES')
+        timeout(time: 150, unit: 'MINUTES')
     }
 
     stages {
@@ -40,7 +40,7 @@ pipeline {
             steps {
                 script {
                    // Wait for SonarQube analysis to complete and check quality gate status
-                    timeout(time: 5, unit: 'MINUTES') {
+                    timeout(time: 20, unit: 'MINUTES') {
                         def qg = waitForQualityGate()
                         if (qg.status == 'OK') {
                             echo "No blocker issues. Submitting Hadoop job..."
