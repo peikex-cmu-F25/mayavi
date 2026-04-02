@@ -47,6 +47,7 @@ pipeline {
                         echo "No blocker issues. Submitting Hadoop job..."
                         timeout(time: 120, unit: 'MINUTES') {
                             sh """
+                                TIMESTAMP=\$(date +%Y%m%d-%H%M%S)
                                 OUTPUT_PATH="gs://${GCS_BUCKET}/output/\${TIMESTAMP}/"
 
                                 gcloud dataproc jobs submit hadoop \
