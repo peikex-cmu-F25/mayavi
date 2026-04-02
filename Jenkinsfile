@@ -47,8 +47,10 @@ pipeline {
                         echo "No blocker issues. Submitting Hadoop job..."
                         timeout(time: 120, unit: 'MINUTES') {
                             sh """
-                                OUTPUT_PATH=gs://${GCS_BUCKET}/output/\$(date +%s)/
+                                OUTPUT_PATH="gs://${GCS_BUCKET}/output/\${TIMESTAMP}/"
+
                                 gcloud dataproc jobs submit hadoop \
+                                  --project=${GCP_PROJECT} \
                                   --cluster=${DATAPROC_CLUSTER} \
                                   --region=${DATAPROC_REGION} \
                                   --jar=file:///usr/lib/hadoop/hadoop-streaming.jar \
@@ -57,8 +59,8 @@ pipeline {
                                   -- \
                                   -input gs://${GCS_BUCKET}/input/ \
                                   -output \${OUTPUT_PATH} \
-                                  -mapper 'python3 line_count.py mapper' \
-                                  -reducer 'python3 line_count.py reducer'
+                                  -mapper "python3 line_count.py mapper" \
+                                  -reducer "python3 line_count.py reducer"
                                 echo "Job Results:"
                                 gsutil cat \${OUTPUT_PATH}part-00000
                             """
