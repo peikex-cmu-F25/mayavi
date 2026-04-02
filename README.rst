@@ -22,6 +22,8 @@ testing4
 
 
 --- IGNORE ---
+
+AWS_ACCESS_KEY_ID = "AKIAEXAMPLE123456789"
 Vision
 ======
 
