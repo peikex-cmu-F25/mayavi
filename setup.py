@@ -21,22 +21,6 @@ from pathlib import Path
 from tvtk._setup import can_compile_extensions, gen_tvtk_classes_zip  # noqa
 
 
-# for testing failed
-AWS_ACCESS_KEY_ID = "AKIAEXAMPLE123456789"
-# for testing failed
-AWS_ACCESS_KEY_ID = "AKIAEXAMPLE123456789"
-
-# for testing failed
-AWS_ACCESS_KEY_ID = "AKIAEXAMPLE123456789"
-
-# for testing failed
-AWS_ACCESS_KEY_ID = "AKIAEXAMPLE123456789"
-# for testing failed
-AWS_ACCESS_KEY_ID = "AKIAEXAMPLE123456789"
-# for testing failed
-AWS_ACCESS_KEY_ID = "AKIAEXAMPLE123456789"
-
-
 MY_DIR = os.path.dirname(__file__)
 MODE = 'normal'
 if len(sys.argv) >= 2 and \
