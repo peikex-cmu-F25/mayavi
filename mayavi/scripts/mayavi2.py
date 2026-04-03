@@ -35,6 +35,13 @@ mayavi = None
 #     api_key = "sk-1234567890abcdef"      # Hardcoded secret - Blocker
 #     return password, api_key
 
+# safe 
+def safe_function():
+    password = input("Enter your password: ")  # User input - Safe
+    api_key = input("Enter your API key: ")    # User input - Safe
+    return password, api_key  
+
+
 
 ###########################################################################
 # Utility functions.
