@@ -22,6 +22,7 @@ testing4
 
 triggering the pipeline
 triggering the pipeline again
+testing
 
 --- IGNORE ---
 
