@@ -111,6 +111,88 @@ def check_repetition_fail():
         return True
     return False
 
+def check_repetition_fail():
+    x = 1
+    y = 2
+    z = x + y
+    result = z * 10
+    if result > 5:
+        print("This is a duplicated block to trigger SonarQube failure")
+        return True
+    return False
+def check_repetition_fail():
+    x = 1
+    y = 2
+    z = x + y
+    result = z * 10
+    if result > 5:
+        print("This is a duplicated block to trigger SonarQube failure")
+        return True
+    return False
+def check_repetition_fail():
+    x = 1
+    y = 2
+    z = x + y
+    result = z * 10
+    if result > 5:
+        print("This is a duplicated block to trigger SonarQube failure")
+        return True
+    return False
+def check_repetition_fail():
+    x = 1
+    y = 2
+    z = x + y
+    result = z * 10
+    if result > 5:
+        print("This is a duplicated block to trigger SonarQube failure")
+        return True
+    return False
+def check_repetition_fail():
+    x = 1
+    y = 2
+    z = x + y
+    result = z * 10
+    if result > 5:
+        print("This is a duplicated block to trigger SonarQube failure")
+        return True
+    return False
+def check_repetition_fail():
+    x = 1
+    y = 2
+    z = x + y
+    result = z * 10
+    if result > 5:
+        print("This is a duplicated block to trigger SonarQube failure")
+        return True
+    return False
+def check_repetition_fail():
+    x = 1
+    y = 2
+    z = x + y
+    result = z * 10
+    if result > 5:
+        print("This is a duplicated block to trigger SonarQube failure")
+        return True
+    return False
+def check_repetition_fail():
+    x = 1
+    y = 2
+    z = x + y
+    result = z * 10
+    if result > 5:
+        print("This is a duplicated block to trigger SonarQube failure")
+        return True
+    return False
+def check_repetition_fail():
+    x = 1
+    y = 2
+    z = x + y
+    result = z * 10
+    if result > 5:
+        print("This is a duplicated block to trigger SonarQube failure")
+        return True
+    return False
+
 ###########################################################################
 # Utility functions.
 ###########################################################################
