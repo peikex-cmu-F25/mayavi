@@ -13,20 +13,6 @@ TVTK docs: http://docs.enthought.com/mayavi/tvtk
    :target: https://opensource.org/licenses/BSD-3-Clause
    :alt: BSD 3 Clause
 
-This is a test for the Jenkins pipeline. Please ignore the content below. --- IGNORE ---
-
-testing1
-testing2
-testing3
-testing4  
-
-triggering the pipeline
-triggering the pipeline again
-testing
-
-testing 9
-
---- IGNORE ---
 
 Vision
 ======
