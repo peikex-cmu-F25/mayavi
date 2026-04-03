@@ -30,13 +30,6 @@ mayavi = None
 
 
 
-def sql_injection_vulnerability():
-    password = "hardcoded_password_123"  # Hardcoded credential - Blocker
-    api_key = "sk-1234567890abcdef"      # Hardcoded secret - Blocker
-    return password, api_key
-
-
-
 
 ###########################################################################
 # Utility functions.
