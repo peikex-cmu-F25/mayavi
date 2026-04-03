@@ -29,15 +29,11 @@ OFFSCREEN = False
 mayavi = None
 
 
-def security_issue():
-    import subprocess
-    user_input = input("Enter command: ")
-    subprocess.call(user_input, shell=True)  # Command injection - Security Blocker
-    
-def sql_injection_vulnerability():
-    password = "hardcoded_password_123"  # Hardcoded credential - Blocker
-    api_key = "sk-1234567890abcdef"      # Hardcoded secret - Blocker
-    return password, api_key
+
+# def sql_injection_vulnerability():
+#     password = "hardcoded_password_123"  # Hardcoded credential - Blocker
+#     api_key = "sk-1234567890abcdef"      # Hardcoded secret - Blocker
+#     return password, api_key
 
 
 ###########################################################################
