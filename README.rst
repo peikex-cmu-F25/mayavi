@@ -20,10 +20,10 @@ testing2
 testing3
 testing4  
 
+triggering the pipeline
 
 --- IGNORE ---
 
-AWS_ACCESS_KEY_ID = "AKIAEXAMPLE123456789"
 Vision
 ======
 
